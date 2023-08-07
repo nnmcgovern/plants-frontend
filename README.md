@@ -1,6 +1,8 @@
 # plants-frontend
 
 This site built with React serves as a frontend for [The Plants API](https://github.com/DanSinensky/plantsAPI). 
+<br />
+[Click here to go to the deployed site](https://plants-full-crud.netlify.app).
 
 ## Home
 <img width="720" alt="home" src="https://github.com/nnmcgovern/plants-frontend/assets/48661257/1bcc99f0-722d-45f7-92c4-92a467dee5c9">
