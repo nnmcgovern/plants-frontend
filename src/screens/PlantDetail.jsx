@@ -32,11 +32,11 @@ export default function PlantDetail() {
             <img src={placeholderImg} height="200px" alt="placeholder: no image available" />}
         </div>
         <div className="plant-detail-info">
-          <p>Scientific Name: {plant.scientific_name}</p>
-          <p>Other names:{plant.other_name?.length ? plant.other_name.map((name, i) => i < plant.other_name.length - 1 ? ` ${name},` : ` ${name}`) : " (none)"}</p>
-          {plant.family ? <p>Family: {plant.family}</p> : <p>Family: (no family listed)</p>}
-          <p>{plant.dimension}</p>
-          <p>Origin: {plant.origin?.length ? plant.origin.map((location, i) => i < plant.origin.length - 1 ? ` ${location},` : ` ${location}`) : " (none listed)"}</p>
+          <p><span>Scientific Name:</span> {plant.scientific_name}</p>
+          <p><span>Other name(s):</span>{plant.other_name?.length ? plant.other_name.map((name, i) => i < plant.other_name.length - 1 ? ` ${name},` : ` ${name}`) : " (none)"}</p>
+          {plant.family ? <p><span>Family:</span> {plant.family}</p> : <p><span>Family:</span> (no family listed)</p>}
+          <p><span>Dimension(s):</span> {plant.dimension}</p>
+          <p><span>Origin:</span> {plant.origin?.length ? plant.origin.map((location, i) => i < plant.origin.length - 1 ? ` ${location},` : ` ${location}`) : " (none listed)"}</p>
           <p>{plant.description}</p>
         </div>
       </div>

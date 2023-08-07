@@ -114,6 +114,33 @@ header * {
   word-wrap: break-word;
 }
 
+.plant-detail h1 {
+  color: rgb(1, 76, 3);
+}
+
 .plant-detail-container {
   display: flex;
+}
+
+.plant-detail-container * {
+  margin: 20px;
+}
+
+.plant-detail-image img {
+  border: solid 3px rgb(1, 76, 3);
+  border-radius: 15px;
+}
+
+.plant-detail-info {
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  line-height: 25px;
+  overflow: scroll;
+}
+
+span {
+  font-size: 20px;
+  color: rgb(2, 121, 6);
+  /* font-style: italic; */
 }
