@@ -16,7 +16,7 @@ export default function Plants() {
 
   return (
     <div className="plants-container">
-      {plants.map(plant => (
+      {plants?.map(plant => (
         <Plant plant={plant} key={plant["_id"]} />
       ))}
     </div>
