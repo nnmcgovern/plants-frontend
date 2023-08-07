@@ -1,4 +1,4 @@
-import { getPlantsByQuery, getAllPlants } from "../services/plants.js"
+import { getAllPlants } from "../services/plants.js"
 import { useState } from "react"
 import Plant from "../components/Plant.jsx"
 
