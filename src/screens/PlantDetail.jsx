@@ -23,7 +23,7 @@ export default function PlantDetail() {
   }
 
   return (
-    <div>
+    <div className="plant-detail">
       <h1>{plant?.common_name}</h1>
       {/* <img className="plant-detail-image" src={plant.default_image?.original_url} height="500px" alt={plant.common_name} /> */}
       {plant.default_image?.original_url ?

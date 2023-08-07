@@ -79,7 +79,7 @@ export default function PlantCreate() {
 
         <input
           type="text"
-          placeholder="Enter other common name(s)"
+          placeholder="Enter other common name(s) seperated by commas"
           name="other_name"
           value={plant.other_name?.toString()}
           onChange={handleChange}
@@ -95,7 +95,7 @@ export default function PlantCreate() {
 
         <input
           type="text"
-          placeholder="Enter the plant's dimension as 'Height: xx feet'"
+          placeholder="Enter the plant's dimension(s) (ex. 'Height: xx feet'):"
           name="dimension"
           value={plant.dimension}
           onChange={handleChange}
@@ -109,7 +109,7 @@ export default function PlantCreate() {
           onChange={handleChange}
         />
 
-        <input
+        <input className="plant-create-description"
           type="text"
           placeholder="Enter a description"
           name="description"

@@ -1,23 +1,56 @@
-/* body {
-  background: linear-gradient(to top, #56ab2f, #ffffff);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
-} */
-
 .App {
   text-align: center;
   background: linear-gradient(to top, #56ab2f, #ffffff);
-  /* width: 100%; */
 }
 
-.home {
+.home,
+.plant-create,
+.plant-detail {
   min-height: calc(100vh - 90px);
 }
 
-.plant-create {
-  min-height: calc(100vh - 90px);
+.plant-create form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plant-create form input,
+.plant-create-description {
+  width: 500px;
+  margin: 10px;
+  color: rgb(1, 76, 3);
+}
+
+.plant-create form input:not(.plant-create-description) {
+  height: 25px;
+}
+
+.plant-create-description {
+  height: 300px;
+}
+
+.plant-create-description::placeholder {
+  position: absolute;
+  top: 0;
+  padding-top: 10px;
+}
+
+button {
+  background-color: rgb(1, 76, 3);
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 15px;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 4px 5px 5px rgb(1, 49, 3);
 }
 
 .search {
@@ -45,6 +78,10 @@ header {
   align-items: center;
 }
 
+.header-link:hover {
+  font-weight: bolder;
+}
+
 header * {
   text-decoration: none;
   font-size: 25px;
@@ -54,7 +91,6 @@ header * {
 .plants-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(14, 1fr); */
   margin: 0 30px;
 }
 
