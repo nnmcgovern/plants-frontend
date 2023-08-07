@@ -5,29 +5,36 @@
 
 .home,
 .plant-create,
-.plant-detail {
+.plant-detail,
+.plant-edit {
   min-height: calc(100vh - 90px);
 }
 
-.plant-create form {
+.plant-create form,
+.plant-edit form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .plant-create form input,
-.plant-create-description {
+.plant-create-description,
+.plant-edit form input,
+.plant-edit-description {
   width: 500px;
   margin: 10px;
   color: rgb(1, 76, 3);
 }
 
-.plant-create form input:not(.plant-create-description) {
+.plant-create form input:not(.plant-create-description),
+.plant-edit form input:not(.plant-edit-description) {
   height: 25px;
 }
 
-.plant-create-description {
+.plant-create-description,
+.plant-edit-description {
   height: 300px;
+  font-family: Helvetica;
 }
 
 .plant-create-description::placeholder {
@@ -64,7 +71,8 @@ button:hover {
   color: rgb(1, 76, 3);
 }
 
-input {
+input,
+textarea {
   border-radius: 15px;
   padding: 8px;
   font-weight: bold;
@@ -106,6 +114,6 @@ header * {
   word-wrap: break-word;
 }
 
-.plant-detail-other-name {
-  display: inline;
+.plant-detail-container {
+  display: flex;
 }

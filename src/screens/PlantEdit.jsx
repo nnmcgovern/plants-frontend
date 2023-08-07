@@ -82,7 +82,7 @@ export default function PlantEdit() {
   // console.log("plant: ", plant)
 
   return (
-    <div>
+    <div className="plant-edit">
       <h1>Edit Plant</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -109,7 +109,6 @@ export default function PlantEdit() {
           onChange={handleChange}
         />
 
-        {/* ???????????????????? */}
         <input
           type="text"
           placeholder="Enter other common name(s)"
@@ -128,13 +127,12 @@ export default function PlantEdit() {
 
         <input
           type="text"
-          placeholder="Enter the plant's dimension as 'Height: xx feet'"
+          placeholder="Enter the plant's dimension(s) (ex. 'Height: xx feet')"
           name="dimension"
           value={plant.dimension}
           onChange={handleChange}
         />
 
-        {/* ?????????????????????????? */}
         <input
           type="text"
           placeholder="Enter the origin location(s) seperated by commas"
@@ -143,7 +141,7 @@ export default function PlantEdit() {
           onChange={handleChange}
         />
 
-        <input
+        <textarea className="plant-edit-description"
           type="text"
           placeholder="Enter a description"
           name="description"
