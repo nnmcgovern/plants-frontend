@@ -50,7 +50,7 @@ export default function PlantCreate() {
   }
 
   return (
-    <div>
+    <div className="plant-create">
       <h1>Add a New Plant</h1>
       <form onSubmit={handleSubmit}>
         <input

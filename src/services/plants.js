@@ -28,7 +28,7 @@ export const getPlantsByQuery = async (param, value) => {
     const res = await getAllPlants()
     const newArr = []
 
-    plants = res.data
+    const plants = res.data
 
 
 
