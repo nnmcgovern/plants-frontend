@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { getPlantById, deletePlantById } from "../services/plants"
 import { Link, useParams, useNavigate } from "react-router-dom"
+import placeholderImg from "../img/placeholder-no-image.png"
 
 export default function PlantDetail() {
   const [plant, setPlant] = useState({})
@@ -24,7 +25,10 @@ export default function PlantDetail() {
   return (
     <div>
       <h1>{plant?.common_name}</h1>
-      <img className="plant-detail-image" src={plant.default_image?.original_url} height="500px" alt={plant.common_name} />
+      {/* <img className="plant-detail-image" src={plant.default_image?.original_url} height="500px" alt={plant.common_name} /> */}
+      {plant.default_image?.original_url ?
+        <img src={plant.default_image.original_url} alt={plant.common_name} /> :
+        <img src={placeholderImg} height="200px" alt="placeholder: no image available" />}
       <p>Scientific Name: {plant.scientific_name}</p>
       <p>Other names:{plant.other_name?.length ? plant.other_name.map((name, i) => i < plant.other_name.length - 1 ? ` ${name},` : ` ${name}`) : " (none)"}</p>
       {plant.family ? <p>Family: {plant.family}</p> : <p>Family: (no family listed)</p>}

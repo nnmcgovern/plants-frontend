@@ -25,25 +25,32 @@ export const getPlantsByQuery = async (param, value) => {
     // const res = await api.get(`/plants?${param}=${value}`)
     // return res.data
 
-    const response = getAllPlants()
-    const results = []
+    const res = await getAllPlants()
+    const newArr = []
 
-    response.forEach(plant => {
-      if (typeof plant[param] === "string") {
-        if (plant[param].toLowerCase().includes(value.toLowerCase())) {
-          results.push(plant)
-        }
-      }
-      else { // array, height is number???
-        plant[param].forEach(el => {
-          if (el.toLowerCase().includes(value.toLowerCase())) {
-            results.push(plant)
-          }
-        })
-      }
-    })
+    plants = res.data
 
-    return results
+
+
+    // const response = getAllPlants()
+    // const results = []
+
+    // response.forEach(plant => {
+    //   if (typeof plant[param] === "string") {
+    //     if (plant[param].toLowerCase().includes(value.toLowerCase())) {
+    //       results.push(plant)
+    //     }
+    //   }
+    //   else { // array, height is number???
+    //     plant[param].forEach(el => {
+    //       if (el.toLowerCase().includes(value.toLowerCase())) {
+    //         results.push(plant)
+    //       }
+    //     })
+    //   }
+    // })
+
+    // return results
   }
   catch (err) {
     console.log("Error getting plants by query: ", err)
