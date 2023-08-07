@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
-import { getPlantById, deletePlant } from "../services/plants"
-import { useParams, useNavigate } from "react-router-dom"
+import { getPlantById, deletePlantById } from "../services/plants"
+import { Link, useParams, useNavigate } from "react-router-dom"
 
 export default function PlantDetail() {
   const [plant, setPlant] = useState({})
@@ -13,17 +13,17 @@ export default function PlantDetail() {
 
   async function fetchPlant(id) {
     const plant = await getPlantById(id)
-    setPlant(plant[0])
+    setPlant(plant)
   }
 
   async function handleDelete(e) {
-    await deletePlant(id)
+    await deletePlantById(id)
     navigate("/plants")
   }
 
   return (
     <div>
-      <h1>{plant.common_name}</h1>
+      <h1>{plant?.common_name}</h1>
       <img className="plant-detail-image" src={plant.default_image?.original_url} height="500px" alt={plant.common_name} />
       <p>Scientific Name: {plant.scientific_name}</p>
       <p>Other names:{plant.other_name?.length ? plant.other_name.map((name, i) => i < plant.other_name.length - 1 ? ` ${name},` : ` ${name}`) : " (none)"}</p>
@@ -32,7 +32,9 @@ export default function PlantDetail() {
       <p>Origin: {plant.origin?.length ? plant.origin.map((location, i) => i < plant.origin.length - 1 ? ` ${location},` : ` ${location}`) : " (none listed)"}</p>
       <p>{plant.description}</p>
 
-      <button>Edit Plant</button>
+      <Link to={`/plants/${id}/edit`}>
+        <button>Edit Plant</button>
+      </Link>
       <button onClick={handleDelete} >Delete Plant</button>
     </div>
   )
