@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# plants-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This site built with React serves as a frontend for [The Plants API](https://github.com/DanSinensky/plantsAPI). 
 
-## Available Scripts
+## Home
+<img width="720" alt="home" src="https://github.com/nnmcgovern/plants-frontend/assets/48661257/1bcc99f0-722d-45f7-92c4-92a467dee5c9">
+<br /><br />
+On the home screen, users can search for a plant in the database by name. The search is not case-sensitive and will automatically query the API for every change in value within the input box (i.e. for each letter the user enters). If one or more matches is found, they will display below the search bar. Clicking on a result will show further details about that plant.
+<br /><br />
+<img width="720" alt="search" src="https://github.com/nnmcgovern/plants-frontend/assets/48661257/2bd18ce2-44a1-43e9-ab78-d5797a6e415f">
 
-In the project directory, you can run:
+## All Plants
+<img width="720" alt="all-plants" src="https://github.com/nnmcgovern/plants-frontend/assets/48661257/43bf6e72-d197-4a3b-91c6-294d16b5493d">
+<br /><br />
 
-### `npm start`
+Clicking the ```All Plants``` link in the header will display all of the plants currently listed in the database. Clicking on a plant's name or image will display further details about that plant. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Plant Detail
+<img width="720" alt="plant-detail" src="https://github.com/nnmcgovern/plants-frontend/assets/48661257/cf973667-f086-4ead-923a-ca4865b1e74c">
+<br /><br />
+The details page of a particular plant will display the plant's common name, an image of the plant, as well as other information such as scientific name, other common names, family, dimensions, origin, and a description.
+<br /><br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+At the bottom of the page are two buttons to either edit the plant's information or delete the plant from the database. Clicking on the ```Edit Plant``` button will take the user to the Edit screen where the plant's details can be updated.
+<br /><br />
+<img width="720" alt="edit-plant" src="https://github.com/nnmcgovern/plants-frontend/assets/48661257/6ea39705-e275-4f95-a6ae-a26ed2bfde8e">
+<br /><br />
+Clicking on the ```Delete Plant``` button will delete the plant from the database and redirect the user back to the All Plants screen.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Add New Plant
+Clicking ```Add New Plant``` will take the user to a form to enter information for a new plant. When the user clicks submit, the new plant is created and added to the database, and the user is redirected to the All Plants screen.
+<br /><br />
+<img width="720" alt="add-new-plant" src="https://github.com/nnmcgovern/plants-frontend/assets/48661257/bd9c7c3d-81a0-4afc-af34-5bc90542fb57">
