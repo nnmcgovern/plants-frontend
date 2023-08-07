@@ -53,3 +53,13 @@ export const getPlantsByQuery = async (param, value) => {
 export const getPlantsByQueries = async (paramsObj) => {
 
 }
+
+export const deletePlant = async (id) => {
+  try {
+    const res = await api.delete(`/plants/${id}`)
+    return res.data
+  }
+  catch (err) {
+    console.log("Error deleting plant: ", err)
+  }
+}

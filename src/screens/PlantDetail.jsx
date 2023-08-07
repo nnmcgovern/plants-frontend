@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
-import { getPlantById } from "../services/plants"
-import { useParams } from "react-router-dom"
+import { getPlantById, deletePlant } from "../services/plants"
+import { useParams, useNavigate } from "react-router-dom"
 
 export default function PlantDetail() {
   const [plant, setPlant] = useState({})
   const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchPlant(id)
@@ -15,7 +16,10 @@ export default function PlantDetail() {
     setPlant(plant[0])
   }
 
-
+  async function handleDelete(e) {
+    await deletePlant(id)
+    navigate("/plants")
+  }
 
   return (
     <div>
@@ -27,6 +31,9 @@ export default function PlantDetail() {
       <p>{plant.dimension}</p>
       <p>Origin: {plant.origin?.length ? plant.origin.map((location, i) => i < plant.origin.length - 1 ? ` ${location},` : ` ${location}`) : " (none listed)"}</p>
       <p>{plant.description}</p>
+
+      <button>Edit Plant</button>
+      <button onClick={handleDelete} >Delete Plant</button>
     </div>
   )
 }
