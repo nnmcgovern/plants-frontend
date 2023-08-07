@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
-import { useNavigate, useParams } from "react-router-dom"
-import { getPlantById, updatePlantById } from "../services/plants"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { createPlant } from "../services/plants"
 
-export default function PlantEdit() {
+export default function PlantCreate() {
   const [plant, setPlant] = useState({
     common_name: "",
     default_image: {
@@ -16,42 +16,12 @@ export default function PlantEdit() {
     description: ""
   })
 
-  const { id } = useParams()
   const navigate = useNavigate()
-
-  useEffect(() => {
-    fetchPlant()
-  }, [])
-
-  async function fetchPlant() {
-    const plantFetched = await getPlantById(id)
-    const obj = {
-      common_name: plantFetched.common_name,
-      default_image: {
-        original_url: ""
-      },
-      scientific_name: plantFetched.scientific_name,
-      other_name: plantFetched.other_name,
-      family: plantFetched.family,
-      dimension: plantFetched.dimension,
-      origin: plantFetched.origin,
-      description: plantFetched.description
-    }
-
-    if (plantFetched.hasOwnProperty("default_image")) {
-      if (plantFetched.default_image.hasOwnProperty("original_url")) {
-        obj.default_image.original_url = plantFetched.default_image.original_url
-      }
-    }
-
-    console.log("Plant Edit: ", plantFetched)
-    setPlant(obj)
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await updatePlantById(id, plant)
-    navigate(`/plants/${id}`)
+    await createPlant(plant)
+    navigate("/plants")
   }
 
   const handleChange = e => {
@@ -79,11 +49,9 @@ export default function PlantEdit() {
     }
   }
 
-  // console.log("plant: ", plant)
-
   return (
     <div>
-      <h1>Edit Plant</h1>
+      <h1>Add a New Plant</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -109,7 +77,6 @@ export default function PlantEdit() {
           onChange={handleChange}
         />
 
-        {/* ???????????????????? */}
         <input
           type="text"
           placeholder="Enter other common name(s)"
@@ -134,7 +101,6 @@ export default function PlantEdit() {
           onChange={handleChange}
         />
 
-        {/* ?????????????????????????? */}
         <input
           type="text"
           placeholder="Enter the origin location(s) seperated by commas"

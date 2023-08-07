@@ -54,6 +54,16 @@ export const getPlantsByQueries = async (paramsObj) => {
 
 }
 
+export const createPlant = async (newPlantData) => {
+  try {
+    const res = await api.post("/plants", newPlantData)
+    return res.data
+  }
+  catch (err) {
+    console.log("Error creating plant: ", err)
+  }
+}
+
 export const updatePlantById = async (id, newPlantData) => {
   try {
     const res = api.put(`/plants/${id}`, newPlantData)
